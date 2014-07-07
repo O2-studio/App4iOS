@@ -1,0 +1,15 @@
+
+# SBMVC
+
+## 目的
+
+1. 子类填空开发
+2. Item自动化
+
+
+## flow
+
+SBViewController -> SBModel -> SBRequest -> SBItemList -> SBItem
+
+SBViewTableViewController -> SBTableViewDataSource / SBTableViewDelegate
+                          -> SBModel -> SBRequest -> SBItemList -> SBItem
