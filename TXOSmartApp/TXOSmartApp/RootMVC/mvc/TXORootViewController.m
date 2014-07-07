@@ -13,8 +13,10 @@
 #import "TXORootDelegate.h"
 #import "TXORootItem.h"
 #import "TXOSlideViewController.h"
+#import "TXOAnimator.h"
 
-@interface TXORootViewController ()<UIWebViewDelegate>
+
+@interface TXORootViewController ()<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
 
 
 @property(nonatomic,strong) TXORootDataSource* ds;
@@ -71,8 +73,6 @@
     [super loadView]; 
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"slide" style:UIBarButtonItemStylePlain target:self action:@selector(onOpenSlide:) ];
-
-
 }
 
 
@@ -121,22 +121,10 @@
 //////////////////////////////////////////////////////////// 
 #pragma mark - TBCitySBViewController 
 
-
-//- (void)didLoadModel:(TBCitySBModel *)model
-//{
-//    [super didLoadModel:model];
-//    
-//    
-//}
-//
-//- (BOOL) canShowModel:(TBCitySBModel *)model
-//{
-//    return _canShowRecentModel;
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
   //todo:... 
+    NSLog(@"nnn");
 
 }
 
@@ -150,13 +138,81 @@
 #pragma mark - public method 
 
 
+////////////////////////////////////////////////////////////
+#pragma mark - navigation controller callback
+
+- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                          interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController NS_AVAILABLE_IOS(7_0)
+{
+    
+    return nil;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                   animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                fromViewController:(UIViewController *)fromVC
+                                                  toViewController:(UIViewController *)toVC  NS_AVAILABLE_IOS(7_0)
+{
+  
+    return nil;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                   presentingController:(UIViewController *)presenting
+                                                                       sourceController:(UIViewController *)source
+{
+    TXOAnimator* transition = [TXOAnimator new];
+    transition.duration = 1.0f;
+    transition.bPresenting = YES;
+
+    return transition;
+
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+   // self.navigationController.view.frame = CGRectMake(100, self.view.frame.origin.y, 320, self.view.frame.size.height);
+    TXOAnimator* transition = [TXOAnimator new];
+    transition.duration = 1.0f;
+    transition.bPresenting = NO;
+    
+    return transition;
+}
+
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator
+{
+    return nil;
+}
+
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator
+{
+    return nil;
+}
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
 
-- (void)onOpenSlide:(id)sender
+
+
+- (void)onOpenSlide:(UIView* )sender
 {
-    [self.navigationController pushViewController:[TXOSlideViewController new] animated:YES];
+    sender.tag = !sender.tag;
+
+    TXOSlideViewController* slideVC = [TXOSlideViewController new];
+    slideVC.transitioningDelegate = self;
+    slideVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    if (sender.tag) {
+        [self presentViewController:slideVC animated:YES completion:nil];
+    }
+    else
+    {
+        TXOSlideViewController* vc = (TXOSlideViewController* )self.presentedViewController;
+        vc.transitioningDelegate = self;
+        [self dismissViewControllerAnimated:YES completion:nil];
+       // [vc dismiss];
+    }
+        //
 
 }
 

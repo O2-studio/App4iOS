@@ -11,8 +11,10 @@
 #import "TXOSlideModel.h"
 #import "TXOSlideDataSource.h"
 #import "TXOSlideDelegate.h"
+#import "TXOAnimator.h"
 
-@interface TXOSlideViewController ()
+
+@interface TXOSlideViewController ()<UIViewControllerTransitioningDelegate>
 
 @property(nonatomic,strong) TXOSlideModel* model;
 @property(nonatomic,strong) TXOSlideDataSource* ds;
@@ -85,15 +87,15 @@
     self.dataSource = self.ds;
     self.delegate = self.dl;
 
-    //4,@REQUIRED:YOU MUST SET A KEY MODEL!
-    self.keyModel = self.model;
+    //4, set data
+    NSData* data = [[NSUserDefaults standardUserDefaults] objectForKey:@"tags"];
+    NSArray* list = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    [self.ds setItems:list ForSection:0];
+    [self.tableView reloadData];
 
-    //5,REQUIRED:register model to parent view controller
-    [self registerModel:self.model];
-
-    //6,load model
-    [self load];
-
+    //nil footerview
+    self.tableView.tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning{ 
@@ -116,13 +118,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
   //todo:... 
-
+    NSLog(@"aaa");
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath component:(NSDictionary *)bundle{
 
   //todo:... 
 
+}
+- (void)dismiss
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    TXOAnimator* transition = [TXOAnimator new];
+    transition.duration = 1.0f;
+    transition.bPresenting = NO;
+    return transition;
+    
 }
 
 //////////////////////////////////////////////////////////// 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETContainerViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : ETContainerViewController
 
 @end

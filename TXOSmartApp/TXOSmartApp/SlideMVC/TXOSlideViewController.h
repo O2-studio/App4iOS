@@ -10,5 +10,5 @@
 
 @interface TXOSlideViewController : TBCitySBTableViewController
 
-
+- (void)dismiss;
 @end

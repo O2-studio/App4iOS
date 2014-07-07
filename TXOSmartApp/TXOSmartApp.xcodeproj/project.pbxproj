@@ -22,6 +22,18 @@
 		AF0DD17919630DA600A7A7EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0DD15B19630DA600A7A7EE /* UIKit.framework */; };
 		AF0DD18119630DA600A7A7EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF0DD17F19630DA600A7A7EE /* InfoPlist.strings */; };
 		AF0DD18319630DA600A7A7EE /* TXOSmartAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0DD18219630DA600A7A7EE /* TXOSmartAppTests.m */; };
+		AF1A453D196A982600ABF62B /* ETBounceViewTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A4534196A982600ABF62B /* ETBounceViewTransitionAnimation.m */; };
+		AF1A453E196A982600ABF62B /* ETFlipViewTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A4536196A982600ABF62B /* ETFlipViewTransitionAnimation.m */; };
+		AF1A453F196A982600ABF62B /* ETFoldViewTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A4538196A982600ABF62B /* ETFoldViewTransitionAnimation.m */; };
+		AF1A4540196A982600ABF62B /* ETGateViewTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A453A196A982600ABF62B /* ETGateViewTransitionAnimation.m */; };
+		AF1A4541196A982600ABF62B /* ETViewControllerTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A453C196A982600ABF62B /* ETViewControllerTransitionAnimation.m */; };
+		AF1A4550196A991000ABF62B /* TXORootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A4545196A991000ABF62B /* TXORootCell.m */; };
+		AF1A4551196A991000ABF62B /* TXORootDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A4547196A991000ABF62B /* TXORootDataSource.m */; };
+		AF1A4552196A991000ABF62B /* TXORootDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A4549196A991000ABF62B /* TXORootDelegate.m */; };
+		AF1A4553196A991000ABF62B /* TXORootItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A454B196A991000ABF62B /* TXORootItem.m */; };
+		AF1A4554196A991000ABF62B /* TXORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A454D196A991000ABF62B /* TXORootViewController.m */; };
+		AF1A4555196A991000ABF62B /* TXRootRecentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A454F196A991000ABF62B /* TXRootRecentModel.m */; };
+		AF1A455F196AC06C00ABF62B /* TXOAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1A455E196AC06C00ABF62B /* TXOAnimator.m */; };
 		AFE4B18C19692A4B0019A1A4 /* ETContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B09319692A4B0019A1A4 /* ETContainerViewController.m */; };
 		AFE4B18D19692A4B0019A1A4 /* ETModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B09719692A4B0019A1A4 /* ETModelViewController.m */; };
 		AFE4B18E19692A4B0019A1A4 /* ETUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B09A19692A4B0019A1A4 /* ETUINavigationController.m */; };
@@ -179,16 +191,10 @@
 		AFE4B28F196930A90019A1A4 /* MemoryWarning.sh in Resources */ = {isa = PBXBuildFile; fileRef = AFE4B253196930A90019A1A4 /* MemoryWarning.sh */; };
 		AFE4B296196931700019A1A4 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B293196931700019A1A4 /* UIScrollView+SVInfiniteScrolling.m */; };
 		AFE4B297196931700019A1A4 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B295196931700019A1A4 /* UIScrollView+SVPullToRefresh.m */; };
-		AFE4B29F196932DF0019A1A4 /* TXORootDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B29A196932DF0019A1A4 /* TXORootDataSource.m */; };
-		AFE4B2A0196932DF0019A1A4 /* TXORootDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B29C196932DF0019A1A4 /* TXORootDelegate.m */; };
-		AFE4B2A1196932DF0019A1A4 /* TXORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B29E196932DF0019A1A4 /* TXORootViewController.m */; };
 		AFE4B2A9196933480019A1A4 /* TXOSlideDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2A4196933480019A1A4 /* TXOSlideDataSource.m */; };
 		AFE4B2AA196933480019A1A4 /* TXOSlideDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2A6196933480019A1A4 /* TXOSlideDelegate.m */; };
 		AFE4B2AB196933480019A1A4 /* TXOSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2A8196933480019A1A4 /* TXOSlideViewController.m */; };
 		AFE4B2AE1969348C0019A1A4 /* TXOSlideItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2AD1969348C0019A1A4 /* TXOSlideItem.m */; };
-		AFE4B2B1196934940019A1A4 /* TXORootItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2B0196934940019A1A4 /* TXORootItem.m */; };
-		AFE4B2B4196935AB0019A1A4 /* TXRootRecentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2B3196935AB0019A1A4 /* TXRootRecentModel.m */; };
-		AFE4B2B71969365E0019A1A4 /* TXORootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2B61969365E0019A1A4 /* TXORootCell.m */; };
 		AFE4B2BA196A37B50019A1A4 /* TXOSlideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2B9196A37B50019A1A4 /* TXOSlideModel.m */; };
 		AFE4B2BD196A3D290019A1A4 /* TXOSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2BC196A3D290019A1A4 /* TXOSlideCell.m */; };
 /* End PBXBuildFile section */
@@ -224,6 +230,30 @@
 		AF0DD17E19630DA600A7A7EE /* TXOSmartAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TXOSmartAppTests-Info.plist"; sourceTree = "<group>"; };
 		AF0DD18019630DA600A7A7EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AF0DD18219630DA600A7A7EE /* TXOSmartAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXOSmartAppTests.m; sourceTree = "<group>"; };
+		AF1A4533196A982600ABF62B /* ETBounceViewTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBounceViewTransitionAnimation.h; sourceTree = "<group>"; };
+		AF1A4534196A982600ABF62B /* ETBounceViewTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETBounceViewTransitionAnimation.m; sourceTree = "<group>"; };
+		AF1A4535196A982600ABF62B /* ETFlipViewTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFlipViewTransitionAnimation.h; sourceTree = "<group>"; };
+		AF1A4536196A982600ABF62B /* ETFlipViewTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETFlipViewTransitionAnimation.m; sourceTree = "<group>"; };
+		AF1A4537196A982600ABF62B /* ETFoldViewTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFoldViewTransitionAnimation.h; sourceTree = "<group>"; };
+		AF1A4538196A982600ABF62B /* ETFoldViewTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETFoldViewTransitionAnimation.m; sourceTree = "<group>"; };
+		AF1A4539196A982600ABF62B /* ETGateViewTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGateViewTransitionAnimation.h; sourceTree = "<group>"; };
+		AF1A453A196A982600ABF62B /* ETGateViewTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGateViewTransitionAnimation.m; sourceTree = "<group>"; };
+		AF1A453B196A982600ABF62B /* ETViewControllerTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerTransitionAnimation.h; sourceTree = "<group>"; };
+		AF1A453C196A982600ABF62B /* ETViewControllerTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerTransitionAnimation.m; sourceTree = "<group>"; };
+		AF1A4544196A991000ABF62B /* TXORootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootCell.h; sourceTree = "<group>"; };
+		AF1A4545196A991000ABF62B /* TXORootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootCell.m; sourceTree = "<group>"; };
+		AF1A4546196A991000ABF62B /* TXORootDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootDataSource.h; sourceTree = "<group>"; };
+		AF1A4547196A991000ABF62B /* TXORootDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootDataSource.m; sourceTree = "<group>"; };
+		AF1A4548196A991000ABF62B /* TXORootDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootDelegate.h; sourceTree = "<group>"; };
+		AF1A4549196A991000ABF62B /* TXORootDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootDelegate.m; sourceTree = "<group>"; };
+		AF1A454A196A991000ABF62B /* TXORootItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootItem.h; sourceTree = "<group>"; };
+		AF1A454B196A991000ABF62B /* TXORootItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootItem.m; sourceTree = "<group>"; };
+		AF1A454C196A991000ABF62B /* TXORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootViewController.h; sourceTree = "<group>"; };
+		AF1A454D196A991000ABF62B /* TXORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootViewController.m; sourceTree = "<group>"; };
+		AF1A454E196A991000ABF62B /* TXRootRecentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXRootRecentModel.h; sourceTree = "<group>"; };
+		AF1A454F196A991000ABF62B /* TXRootRecentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXRootRecentModel.m; sourceTree = "<group>"; };
+		AF1A455D196AC06C00ABF62B /* TXOAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXOAnimator.h; sourceTree = "<group>"; };
+		AF1A455E196AC06C00ABF62B /* TXOAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXOAnimator.m; sourceTree = "<group>"; };
 		AFE4B09219692A4B0019A1A4 /* ETContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETContainerViewController.h; sourceTree = "<group>"; };
 		AFE4B09319692A4B0019A1A4 /* ETContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETContainerViewController.m; sourceTree = "<group>"; };
 		AFE4B09419692A4B0019A1A4 /* ETControllersHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETControllersHeader.h; sourceTree = "<group>"; };
@@ -515,12 +545,6 @@
 		AFE4B293196931700019A1A4 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		AFE4B294196931700019A1A4 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		AFE4B295196931700019A1A4 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
-		AFE4B299196932DF0019A1A4 /* TXORootDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootDataSource.h; sourceTree = "<group>"; };
-		AFE4B29A196932DF0019A1A4 /* TXORootDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootDataSource.m; sourceTree = "<group>"; };
-		AFE4B29B196932DF0019A1A4 /* TXORootDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootDelegate.h; sourceTree = "<group>"; };
-		AFE4B29C196932DF0019A1A4 /* TXORootDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootDelegate.m; sourceTree = "<group>"; };
-		AFE4B29D196932DF0019A1A4 /* TXORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootViewController.h; sourceTree = "<group>"; };
-		AFE4B29E196932DF0019A1A4 /* TXORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootViewController.m; sourceTree = "<group>"; };
 		AFE4B2A3196933480019A1A4 /* TXOSlideDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXOSlideDataSource.h; sourceTree = "<group>"; };
 		AFE4B2A4196933480019A1A4 /* TXOSlideDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXOSlideDataSource.m; sourceTree = "<group>"; };
 		AFE4B2A5196933480019A1A4 /* TXOSlideDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXOSlideDelegate.h; sourceTree = "<group>"; };
@@ -529,12 +553,6 @@
 		AFE4B2A8196933480019A1A4 /* TXOSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXOSlideViewController.m; sourceTree = "<group>"; };
 		AFE4B2AC1969348C0019A1A4 /* TXOSlideItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXOSlideItem.h; sourceTree = "<group>"; };
 		AFE4B2AD1969348C0019A1A4 /* TXOSlideItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXOSlideItem.m; sourceTree = "<group>"; };
-		AFE4B2AF196934940019A1A4 /* TXORootItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootItem.h; sourceTree = "<group>"; };
-		AFE4B2B0196934940019A1A4 /* TXORootItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootItem.m; sourceTree = "<group>"; };
-		AFE4B2B2196935AB0019A1A4 /* TXRootRecentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXRootRecentModel.h; sourceTree = "<group>"; };
-		AFE4B2B3196935AB0019A1A4 /* TXRootRecentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXRootRecentModel.m; sourceTree = "<group>"; };
-		AFE4B2B51969365E0019A1A4 /* TXORootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXORootCell.h; sourceTree = "<group>"; };
-		AFE4B2B61969365E0019A1A4 /* TXORootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXORootCell.m; sourceTree = "<group>"; };
 		AFE4B2B8196A37B50019A1A4 /* TXOSlideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXOSlideModel.h; sourceTree = "<group>"; };
 		AFE4B2B9196A37B50019A1A4 /* TXOSlideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXOSlideModel.m; sourceTree = "<group>"; };
 		AFE4B2BB196A3D290019A1A4 /* TXOSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXOSlideCell.h; sourceTree = "<group>"; };
@@ -645,6 +663,51 @@
 				AF0DD17F19630DA600A7A7EE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF1A4532196A982600ABF62B /* ETControllerTransition */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A4533196A982600ABF62B /* ETBounceViewTransitionAnimation.h */,
+				AF1A4534196A982600ABF62B /* ETBounceViewTransitionAnimation.m */,
+				AF1A4535196A982600ABF62B /* ETFlipViewTransitionAnimation.h */,
+				AF1A4536196A982600ABF62B /* ETFlipViewTransitionAnimation.m */,
+				AF1A4537196A982600ABF62B /* ETFoldViewTransitionAnimation.h */,
+				AF1A4538196A982600ABF62B /* ETFoldViewTransitionAnimation.m */,
+				AF1A4539196A982600ABF62B /* ETGateViewTransitionAnimation.h */,
+				AF1A453A196A982600ABF62B /* ETGateViewTransitionAnimation.m */,
+				AF1A453B196A982600ABF62B /* ETViewControllerTransitionAnimation.h */,
+				AF1A453C196A982600ABF62B /* ETViewControllerTransitionAnimation.m */,
+			);
+			path = ETControllerTransition;
+			sourceTree = "<group>";
+		};
+		AF1A4542196A98F000ABF62B /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A455D196AC06C00ABF62B /* TXOAnimator.h */,
+				AF1A455E196AC06C00ABF62B /* TXOAnimator.m */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		AF1A4543196A991000ABF62B /* mvc */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A4544196A991000ABF62B /* TXORootCell.h */,
+				AF1A4545196A991000ABF62B /* TXORootCell.m */,
+				AF1A4546196A991000ABF62B /* TXORootDataSource.h */,
+				AF1A4547196A991000ABF62B /* TXORootDataSource.m */,
+				AF1A4548196A991000ABF62B /* TXORootDelegate.h */,
+				AF1A4549196A991000ABF62B /* TXORootDelegate.m */,
+				AF1A454A196A991000ABF62B /* TXORootItem.h */,
+				AF1A454B196A991000ABF62B /* TXORootItem.m */,
+				AF1A454C196A991000ABF62B /* TXORootViewController.h */,
+				AF1A454D196A991000ABF62B /* TXORootViewController.m */,
+				AF1A454E196A991000ABF62B /* TXRootRecentModel.h */,
+				AF1A454F196A991000ABF62B /* TXRootRecentModel.m */,
+			);
+			path = mvc;
 			sourceTree = "<group>";
 		};
 		AFE4B08F19692A4B0019A1A4 /* ETLibrary */ = {
@@ -1168,6 +1231,7 @@
 		AFE4B16619692A4B0019A1A4 /* ETView */ = {
 			isa = PBXGroup;
 			children = (
+				AF1A4532196A982600ABF62B /* ETControllerTransition */,
 				AFE4B16719692A4B0019A1A4 /* ETActivityIndicatorView */,
 				AFE4B16A19692A4B0019A1A4 /* ETAttributeLabel */,
 				AFE4B17819692A4B0019A1A4 /* ETImageFocusManger */,
@@ -1523,18 +1587,8 @@
 		AFE4B298196932DF0019A1A4 /* RootMVC */ = {
 			isa = PBXGroup;
 			children = (
-				AFE4B2AF196934940019A1A4 /* TXORootItem.h */,
-				AFE4B2B0196934940019A1A4 /* TXORootItem.m */,
-				AFE4B299196932DF0019A1A4 /* TXORootDataSource.h */,
-				AFE4B29A196932DF0019A1A4 /* TXORootDataSource.m */,
-				AFE4B29B196932DF0019A1A4 /* TXORootDelegate.h */,
-				AFE4B29C196932DF0019A1A4 /* TXORootDelegate.m */,
-				AFE4B29D196932DF0019A1A4 /* TXORootViewController.h */,
-				AFE4B29E196932DF0019A1A4 /* TXORootViewController.m */,
-				AFE4B2B2196935AB0019A1A4 /* TXRootRecentModel.h */,
-				AFE4B2B3196935AB0019A1A4 /* TXRootRecentModel.m */,
-				AFE4B2B51969365E0019A1A4 /* TXORootCell.h */,
-				AFE4B2B61969365E0019A1A4 /* TXORootCell.m */,
+				AF1A4543196A991000ABF62B /* mvc */,
+				AF1A4542196A98F000ABF62B /* animation */,
 			);
 			path = RootMVC;
 			sourceTree = "<group>";
@@ -1742,8 +1796,8 @@
 				AFE4B1D919692A4B0019A1A4 /* ETSystemUtil.m in Sources */,
 				AFE4B19619692A4B0019A1A4 /* ETTableViewDelegate.m in Sources */,
 				AFE4B1B019692A4B0019A1A4 /* ETDebuggerHttpMonitorView.m in Sources */,
-				AFE4B2B1196934940019A1A4 /* TXORootItem.m in Sources */,
 				AFE4B2AB196933480019A1A4 /* TXOSlideViewController.m in Sources */,
+				AF1A4551196A991000ABF62B /* TXORootDataSource.m in Sources */,
 				AFE4B264196930A90019A1A4 /* TBCitySBRequest.m in Sources */,
 				AFE4B25A196930A90019A1A4 /* TBCitySBViewController.m in Sources */,
 				AFE4B1A019692A4B0019A1A4 /* ETAFHttpRequestClient.m in Sources */,
@@ -1756,12 +1810,14 @@
 				AFE4B1B719692A4B0019A1A4 /* ETDebuggerUrlCacheView.m in Sources */,
 				AFE4B297196931700019A1A4 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				AFE4B1CF19692A4B0019A1A4 /* ETFoundation.m in Sources */,
-				AFE4B2A0196932DF0019A1A4 /* TXORootDelegate.m in Sources */,
+				AF1A453D196A982600ABF62B /* ETBounceViewTransitionAnimation.m in Sources */,
+				AF1A455F196AC06C00ABF62B /* TXOAnimator.m in Sources */,
 				AFE4B1A519692A4B0019A1A4 /* ETImageCache.m in Sources */,
 				AFE4B1C119692A4B0019A1A4 /* AFXMLRequestOperation.m in Sources */,
 				AFE4B1C819692A4B0019A1A4 /* NSURL+ETExtension.m in Sources */,
 				AFE4B255196930A90019A1A4 /* TBCitySBTableViewCell.m in Sources */,
 				AFE4B1E419692A4B0019A1A4 /* ETImageScrollChildView.m in Sources */,
+				AF1A4550196A991000ABF62B /* TXORootCell.m in Sources */,
 				AFE4B1D119692A4B0019A1A4 /* ETRuntime.m in Sources */,
 				AF0DD16E19630DA600A7A7EE /* ViewController.m in Sources */,
 				AFE4B25D196930A90019A1A4 /* TBCitySBTableViewDelegate.m in Sources */,
@@ -1775,8 +1831,11 @@
 				AFE4B1A319692A4B0019A1A4 /* ETImageDownloadOperation.m in Sources */,
 				AFE4B1CD19692A4B0019A1A4 /* ETCanvas.m in Sources */,
 				AFE4B1DF19692A4B0019A1A4 /* ETUIAttributeStringUtil.m in Sources */,
+				AF1A453E196A982600ABF62B /* ETFlipViewTransitionAnimation.m in Sources */,
+				AF1A4553196A991000ABF62B /* TXORootItem.m in Sources */,
 				AFE4B1C319692A4B0019A1A4 /* NSArray+ETExtension.m in Sources */,
 				AFE4B18E19692A4B0019A1A4 /* ETUINavigationController.m in Sources */,
+				AF1A4555196A991000ABF62B /* TXRootRecentModel.m in Sources */,
 				AFE4B25C196930A90019A1A4 /* TBCitySBTableViewDataSource.m in Sources */,
 				AFE4B2A9196933480019A1A4 /* TXOSlideDataSource.m in Sources */,
 				AFE4B19E19692A4B0019A1A4 /* ETUrlCache.m in Sources */,
@@ -1798,13 +1857,13 @@
 				AFE4B19F19692A4B0019A1A4 /* ETAFHttpRequest.m in Sources */,
 				AFE4B1A719692A4B0019A1A4 /* ETMemoryMonitor.m in Sources */,
 				AFE4B1B519692A4B0019A1A4 /* ETDebuggerPlotView.m in Sources */,
+				AF1A4540196A982600ABF62B /* ETGateViewTransitionAnimation.m in Sources */,
 				AFE4B1E619692A4B0019A1A4 /* ETImageView.m in Sources */,
 				AFE4B1E119692A4B0019A1A4 /* NSDictionary+OPCoreText.m in Sources */,
 				AFE4B1B219692A4B0019A1A4 /* ETDebuggerMemoryMonitorView.m in Sources */,
-				AFE4B2B4196935AB0019A1A4 /* TXRootRecentModel.m in Sources */,
 				AFE4B1C219692A4B0019A1A4 /* UIImageView+AFNetworking.m in Sources */,
+				AF1A4554196A991000ABF62B /* TXORootViewController.m in Sources */,
 				AFE4B19B19692A4B0019A1A4 /* ETAsyncDrawingCache.m in Sources */,
-				AFE4B2B71969365E0019A1A4 /* TXORootCell.m in Sources */,
 				AFE4B1A919692A4B0019A1A4 /* ETHTTPRunloopOperation.m in Sources */,
 				AFE4B258196930A90019A1A4 /* TBCitySBTableViewLoadingCell.m in Sources */,
 				AFE4B19719692A4B0019A1A4 /* ETItem.m in Sources */,
@@ -1812,8 +1871,8 @@
 				AFE4B1C719692A4B0019A1A4 /* NSString+ETExtension.m in Sources */,
 				AFE4B1D519692A4B0019A1A4 /* ETViewRecycler.m in Sources */,
 				AFE4B1DE19692A4B0019A1A4 /* ETUIAttributeStringParser.m in Sources */,
-				AFE4B29F196932DF0019A1A4 /* TXORootDataSource.m in Sources */,
 				AFE4B1E719692A4B0019A1A4 /* ETProgressIndicator.m in Sources */,
+				AF1A4552196A991000ABF62B /* TXORootDelegate.m in Sources */,
 				AFE4B1D319692A4B0019A1A4 /* ETSingleton.m in Sources */,
 				AFE4B1DA19692A4B0019A1A4 /* EtaoBaseConfigForUX.m in Sources */,
 				AFE4B1DD19692A4B0019A1A4 /* ETUIAttributeLabel.m in Sources */,
@@ -1835,6 +1894,7 @@
 				AFE4B2AA196933480019A1A4 /* TXOSlideDelegate.m in Sources */,
 				AFE4B1E319692A4B0019A1A4 /* ETImageFocusController.m in Sources */,
 				AFE4B1AF19692A4B0019A1A4 /* ETDebugger.m in Sources */,
+				AF1A4541196A982600ABF62B /* ETViewControllerTransitionAnimation.m in Sources */,
 				AFE4B1A119692A4B0019A1A4 /* ETHttpRequest.m in Sources */,
 				AFE4B19A19692A4B0019A1A4 /* ETUIViewController.m in Sources */,
 				AFE4B1BE19692A4B0019A1A4 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1855,10 +1915,10 @@
 				AFE4B1CA19692A4B0019A1A4 /* UIView+Animation.m in Sources */,
 				AFE4B1C619692A4B0019A1A4 /* NSObject+ETExtension.m in Sources */,
 				AFE4B25B196930A90019A1A4 /* SLCoreDataStack.m in Sources */,
-				AFE4B2A1196932DF0019A1A4 /* TXORootViewController.m in Sources */,
 				AFE4B1C019692A4B0019A1A4 /* AFURLConnectionOperation.m in Sources */,
 				AFE4B1D219692A4B0019A1A4 /* ETSandBox.m in Sources */,
 				AFE4B1BD19692A4B0019A1A4 /* AFJSONRequestOperation.m in Sources */,
+				AF1A453F196A982600ABF62B /* ETFoldViewTransitionAnimation.m in Sources */,
 				AFE4B1C919692A4B0019A1A4 /* UIImage+ETExtension.m in Sources */,
 				AFE4B19319692A4B0019A1A4 /* ETTableViewLoadingCell.m in Sources */,
 				AFE4B1E019692A4B0019A1A4 /* NSAttributedString+Encoding.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "TXORootViewController.h"
+#import "TXOSlideModel.h"
+#import "TXOSlideItem.h"
+
 
 
 @implementation AppDelegate
@@ -21,6 +24,28 @@
     self.rootViewController = [[UINavigationController alloc]initWithRootViewController:[TXORootViewController new]];
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
+    
+    //load config
+    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://fierce-meadow-3934.herokuapp.com/tags?format=json"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSError* err;
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+        NSLog(@"main thhred? %d, JSON:%@",[NSThread isMainThread], json);
+        
+        NSArray* tags = json[@"tags"];
+        NSMutableArray* list = [NSMutableArray arrayWithCapacity:tags.count];
+        
+        for (NSDictionary* dict in tags) {
+            
+            TXOSlideItem* item = [TXOSlideItem new];
+            [item autoKVCBinding:dict];
+            [item setValue:dict[@"id"] forKeyPath:@"identifier"];
+            [list addObject:item];
+        }
+        
+        NSData* archivedData = [NSKeyedArchiver archivedDataWithRootObject:[list copy]];
+        [[NSUserDefaults standardUserDefaults] setObject:archivedData forKey:@"tags"];
+        
+    }] resume];
 
     return YES;
 }

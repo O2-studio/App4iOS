@@ -27,12 +27,17 @@
     for (int i=0; i<docs.count; i++) {
         
         TXORootItem* item = [TXORootItem new];
-      
-
         [item autoKVCBinding:docs[i]];
+        
+        item.content = [NSString stringWithFormat:@"%d",i];
         
         CGSize sz = [item.content sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(300, 10000) lineBreakMode:NSLineBreakByTruncatingTail];
         item.itemHeight = sz.height + 20;
+        
+        if (item.itemHeight < 44) {
+            item.itemHeight = 44;
+        }
+        
         [list addObject:item];
     }
     return list;
