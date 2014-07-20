@@ -130,14 +130,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    TXOAnimator* transition = [TXOAnimator new];
-    transition.duration = 1.0f;
-    transition.bPresenting = NO;
-    return transition;
-    
-}
+
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - public method 

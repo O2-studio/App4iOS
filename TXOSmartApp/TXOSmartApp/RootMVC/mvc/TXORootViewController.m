@@ -16,12 +16,16 @@
 #import "TXOAnimator.h"
 
 
-@interface TXORootViewController ()<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+
+@interface TXORootViewController ()<UINavigationControllerDelegate>
 
 
 @property(nonatomic,strong) TXORootDataSource* ds;
 @property(nonatomic,strong) TXORootDelegate* dl;
 @property(nonatomic,strong) TXRootRecentModel* model;
+@property(nonatomic,strong) TXOAnimator* transitionAnimator;
+@property(nonatomic,strong) TXOSlideViewController* slideViewController;
+//@property(nonatomic,strong) TXOInteractiveAnimator* interactiveAnimator;
 
 @end
 
@@ -65,6 +69,17 @@
    return _dl;
 }
 
+- (TXOSlideViewController* )slideViewController
+{
+    if (!_slideViewController) {
+        _slideViewController = [TXOSlideViewController new];
+        _slideViewController.modalPresentationStyle = UIModalPresentationCustom;
+        
+
+    }
+    return _slideViewController;
+}
+
 //////////////////////////////////////////////////////////// 
 #pragma mark - life cycle 
 
@@ -73,6 +88,8 @@
     [super loadView]; 
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"slide" style:UIBarButtonItemStylePlain target:self action:@selector(onOpenSlide:) ];
+    
+    self.view.backgroundColor = [UIColor yellowColor];
 }
 
 
@@ -104,9 +121,14 @@
     //6,load model
     [self load];
 
+    self.transitionAnimator = [[TXOAnimator alloc]initWithFromViewController:self.navigationController ToViewController:self.slideViewController Interactive:YES];
+    self.transitionAnimator.transitionDuration = 0.3;
+    _slideViewController.transitioningDelegate = self.transitionAnimator;
+
+
 }
 
-- (void)didReceiveMemoryWarning{ 
+- (void)didReceiveMemoryWarning{
 
     [super didReceiveMemoryWarning]; 
 
@@ -157,37 +179,6 @@
     return nil;
 }
 
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                   presentingController:(UIViewController *)presenting
-                                                                       sourceController:(UIViewController *)source
-{
-    TXOAnimator* transition = [TXOAnimator new];
-    transition.duration = 1.0f;
-    transition.bPresenting = YES;
-
-    return transition;
-
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-   // self.navigationController.view.frame = CGRectMake(100, self.view.frame.origin.y, 320, self.view.frame.size.height);
-    TXOAnimator* transition = [TXOAnimator new];
-    transition.duration = 1.0f;
-    transition.bPresenting = NO;
-    
-    return transition;
-}
-
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator
-{
-    return nil;
-}
-
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator
-{
-    return nil;
-}
 
 //////////////////////////////////////////////////////////// 
 #pragma mark - private callback method 
@@ -196,24 +187,13 @@
 
 - (void)onOpenSlide:(UIView* )sender
 {
-    sender.tag = !sender.tag;
-
-    TXOSlideViewController* slideVC = [TXOSlideViewController new];
-    slideVC.transitioningDelegate = self;
-    slideVC.modalPresentationStyle = UIModalPresentationCustom;
-    
-    if (sender.tag) {
-        [self presentViewController:slideVC animated:YES completion:nil];
+    if (!self.transitionAnimator.isPresented) {
+        [self presentViewController:self.slideViewController animated:YES completion:nil];
     }
     else
     {
-        TXOSlideViewController* vc = (TXOSlideViewController* )self.presentedViewController;
-        vc.transitioningDelegate = self;
         [self dismissViewControllerAnimated:YES completion:nil];
-       // [vc dismiss];
     }
-        //
-
 }
 
 //////////////////////////////////////////////////////////// 

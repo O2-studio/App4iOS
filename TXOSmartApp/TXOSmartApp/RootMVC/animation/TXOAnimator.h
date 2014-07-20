@@ -8,15 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TXOAnimator : NSObject<UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, assign) BOOL bPushing;
-@property(nonatomic,assign) BOOL bPresenting;
+#define kSlideWidth 100
+@interface TXOAnimator : UIPercentDrivenInteractiveTransition<UIViewControllerTransitioningDelegate>
 
-@property (nonatomic, assign) NSTimeInterval duration;
+//non-interactive transition
+@property(nonatomic, assign) BOOL transitionDuration;
+@property(nonatomic,assign,readonly,getter = isPresented) BOOL presented;
+@property(nonatomic,weak) UIViewController* fromViewController;
+@property(nonatomic,weak) UIViewController* toViewController;
+@property(nonatomic,strong,readonly) id<UIViewControllerContextTransitioning> transitionContext;
 
-- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext fromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC fromView:(UIView *)fromView toView:(UIView *)toView;
 
 
+
+-(id)initWithFromViewController:(UIViewController *)frmVC
+               ToViewController:(UIViewController* )toVC
+                    Interactive:(BOOL)interactive;
+
+//non-interactive hooks
+- (void)performPresentAnimation;
+- (void)performDismissAnimation;
 
 @end
